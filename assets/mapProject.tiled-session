@@ -1,0 +1,39 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "Tileset1/tileset1.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "Tileset1/tileset1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        }
+    },
+    "last.imagePath": "C:/Users/mateu/PycharmProjects/JornadaDeTukTuk/assets/Tileset1/Tilesheet",
+    "map.height": 40,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 40,
+    "openFiles": [
+    ],
+    "project": "mapProject.tiled-project",
+    "recentFiles": [
+        "Tileset1/tileset1.tsx",
+        "Tileset1/tileset1.2.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.spacing": 1,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
