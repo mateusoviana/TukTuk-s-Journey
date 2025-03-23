@@ -45,11 +45,13 @@ source .venv/bin/activate
 ```
 
 ## 📦 4. Install Dependencies
-With the virtual environment activated, install the project's dependencies:
+With the virtual environment activated, install the required dependencies:
 
 ```sh
-pip install -r requirements.txt
+pip install pygame pytmx
 ```
+
+Or just add them directly from your IDE.
 
 ## ▶️ 5. Run the Project
 After installing the dependencies, you can run the project with:
@@ -95,3 +97,4 @@ If you want to contribute to the project:
 
 ---
 Congratulations! You are now ready to contribute to **TukTuk's Journey**. 🚀
+
