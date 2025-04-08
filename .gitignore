@@ -1,4 +1,7 @@
 __pycache__/
 .idea/
 *.pyc
+<<<<<<< HEAD
 /env
+=======
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a

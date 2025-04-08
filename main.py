@@ -1,43 +1,16 @@
 import pygame
-from character import Hero, Enemy
-from data import CHARACTER_DATA
-from battle import start_battle
+from game import Game
+from config import TILE_SIZE
 
-
-def main():
+if __name__ == "__main__":
     pygame.init()
-    global game
-    game = pygame.display.set_mode((500, 500))
-    pygame.display.set_caption('RPG Battle System')
+    pygame.mixer.init()
 
-    white = (255, 255, 255)
-    running = True
+    pygame.display.set_caption("A Jornada de TukTuk")
+    window = pygame.display.set_mode((32*TILE_SIZE, 20*TILE_SIZE))
+    clock = pygame.time.Clock()
 
-    while running:
-        game.fill(white)
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            elif event.type == pygame.KEYDOWN:
-                hero = Hero("TukTuk", CHARACTER_DATA['tuktuk'], level=30, x=0, y=0)
-                if event.key == pygame.K_w:
-                    enemy = Enemy("Water Boss", CHARACTER_DATA['water_boss'], level=25, x=0, y=0)
-                    start_battle(hero, enemy, game)
-                elif event.key == pygame.K_f:
-                    enemy = Enemy("Fire Boss", CHARACTER_DATA['fire_boss'], level=25, x=0, y=0)
-                    start_battle(hero, enemy, game)
-                elif event.key == pygame.K_e:
-                    enemy = Enemy("Earth Boss", CHARACTER_DATA['earth_boss'], level=25, x=0, y=0)
-                    start_battle(hero, enemy, game)
-                elif event.key == pygame.K_d:
-                    enemy = Enemy("Wind Boss", CHARACTER_DATA['wind_boss'], level=25, x=0, y=0)
-                    start_battle(hero, enemy, game)
-
-        pygame.display.update()
+    game = Game(window, clock)
+    game.run()
 
     pygame.quit()
-
-
-if __name__ == '__main__':
-    main()

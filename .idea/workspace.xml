@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d4fcd20a-cfd3-4fe8-8ead-211d595f5f0c" name="Changes" comment="Breaking the template.py file into different class files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="d4fcd20a-cfd3-4fe8-8ead-211d595f5f0c" name="Changes" comment="Adding a map manager for changing maps and some other stuff" />
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,9 +49,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.battle.executor": "Run",
+    "Python.game.executor": "Run",
     "Python.go_over_there.executor": "Run",
     "Python.main.executor": "Run",
+<<<<<<< HEAD
+=======
+    "Python.map_manager.executor": "Run",
+    "Python.player.executor": "Run",
+    "Python.pytmx.executor": "Debug",
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a
     "Python.template.executor": "Run",
+    "Python.util_pygame.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -77,7 +91,11 @@
       <updated>1742322912458</updated>
       <workItem from="1742322913557" duration="15224000" />
       <workItem from="1742681675124" duration="3186000" />
+<<<<<<< HEAD
       <workItem from="1743978536654" duration="4224000" />
+=======
+      <workItem from="1743978536654" duration="15122000" />
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a
     </task>
     <task id="LOCAL-00001" summary="Breaking the template.py file into different class files">
       <option name="closed" value="true" />
@@ -87,7 +105,35 @@
       <option name="project" value="LOCAL" />
       <updated>1744124616756</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="2" />
+=======
+    <task id="LOCAL-00002" summary="Breaking the template.py file into different class files">
+      <option name="closed" value="true" />
+      <created>1744125773318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744125773318</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Breaking the template.py file into different class files">
+      <option name="closed" value="true" />
+      <created>1744125895496</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744125895496</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding a map manager for changing maps and some other stuff">
+      <option name="closed" value="true" />
+      <created>1744146842190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744146842190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,11 +169,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Breaking the template.py file into different class files" />
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" value="Breaking the template.py file into different class files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/JornadaDeTukTuk$main.coverage" NAME="main Coverage Results" MODIFIED="1744124533327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/JornadaDeTukTuk$template.coverage" NAME="template Coverage Results" MODIFIED="1744124129618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <MESSAGE value="Adding a map manager for changing maps and some other stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a map manager for changing maps and some other stuff" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$main.coverage" NAME="main Coverage Results" MODIFIED="1744146909258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$player.coverage" NAME="player Coverage Results" MODIFIED="1744145292034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$template.coverage" NAME="template Coverage Results" MODIFIED="1744124129618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$game.coverage" NAME="game Coverage Results" MODIFIED="1744141416565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> 6b8b3861090bd0cc7870a4b8408fb2139d08577a
     <SUITE FILE_PATH="coverage/JornadaDeTukTuk$go_over_there.coverage" NAME="go_over_there Coverage Results" MODIFIED="1742323497291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/Lib/site-packages/pygame/examples" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$battle.coverage" NAME="battle Coverage Results" MODIFIED="1744141540962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$pytmx.coverage" NAME="pytmx Coverage Results" MODIFIED="1744144820844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/Lib/site-packages/pytmx" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$map_manager.coverage" NAME="map_manager Coverage Results" MODIFIED="1744145313234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JornadaDeTukTuk$util_pygame.coverage" NAME="util_pygame Coverage Results" MODIFIED="1744144877648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/Lib/site-packages/pytmx" />
   </component>
 </project>
