@@ -8,6 +8,14 @@
     ],
     "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
     "fileStates": {
+        "CentralTiles/centralMap.tmx": {
+            "scale": 1.3240625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.22657540712765,
+                "y": 320.2265754071277
+            }
+        },
         "Earth/EarthMap/earthSheet.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -19,6 +27,17 @@
                 "x": 255.95567867036016,
                 "y": 208.31024930747924
             }
+        },
+        "EarthMap/earthMap.tmx": {
+            "scale": 2.0744140625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 255.97589680821014,
+                "y": 160.04519348460596
+            }
+        },
+        "EarthMap/earthSheet.tsx": {
+            "dynamicWrapping": false
         },
         "EarthTiles/earthMap.tmx": {
             "scale": 1.805,
@@ -50,6 +69,18 @@
                 "x": 255.97589680821014,
                 "y": 160.04519348460596
             }
+        },
+        "HomeMap/HomeMap.tmx": {
+            "scale": 1.7654166666666666,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 240.16993155534578,
+                "y": 240.16993155534576
+            }
+        },
+        "HomeMap/HomeMap.tmx#tilemap_packed": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "Map/roguelikeSheet_transparent.tsx": {
             "dynamicWrapping": false,
@@ -139,8 +170,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 473,
-                "y": 456
+                "x": 353.5,
+                "y": 320
             }
         },
         "Tileset1/tiles.tsx": {
@@ -155,6 +186,17 @@
         "Tileset1/tileset1.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1.5
+        },
+        "WaterMap/roguelikeSheet_transparent.tsx": {
+            "dynamicWrapping": false
+        },
+        "WaterMap/waterMap.tmx": {
+            "scale": 1.655078125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.11328770356386,
+                "y": 256.18126032570217
+            }
         },
         "centralTiles.tsx": {
             "dynamicWrapping": true,

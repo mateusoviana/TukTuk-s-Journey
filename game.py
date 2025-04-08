@@ -28,6 +28,8 @@ class Game:
             self.player.update(current_map, self.window)
             self.player.draw(self.window)
 
+            print(self.player.x//TILE_SIZE, self.player.y//TILE_SIZE)
+
             self.map_manager.update_map_if_needed(self.player)
 
             pygame.display.update()

@@ -2,7 +2,6 @@ import pygame
 
 from config import TILE_SIZE
 
-
 class Player:
     def __init__(self, window_height):
         self.x = 20*TILE_SIZE

@@ -4,7 +4,7 @@ from config import TILE_SIZE
 class MapManager:
     def __init__(self):
         self.maps = {
-            "centralMap": Map("assets/CentralTiles/centralMap.tmx"),
+            "centralMap": Map("assets/HomeMap/HomeMap.tmx"),
             "earthMap": Map("assets/EarthMap/earthMap.tmx"),
             "waterMap": Map("assets/WaterMap/waterMap.tmx"),
         }
@@ -12,15 +12,15 @@ class MapManager:
 
         self.transition_points = {
             "centralMap": [
-                {"condition": lambda p: p.x < TILE_SIZE, "next": "earthMap", "new_x": 30*TILE_SIZE, "new_y": 10*TILE_SIZE},
-                {"condition": lambda p: p.y > 38 * TILE_SIZE, "next": "waterMap", "new_x": 9*TILE_SIZE, "new_y": 1 * TILE_SIZE,}
+                {"condition": lambda p: p.x < TILE_SIZE and p.y > TILE_SIZE*14 and p.y < TILE_SIZE*16, "next": "earthMap", "new_x": 30*TILE_SIZE, "new_y": 10*TILE_SIZE},
+                {"condition": lambda p: p.x > 13*TILE_SIZE and p.x < 16*TILE_SIZE and p.y > 28 * TILE_SIZE, "next": "waterMap", "new_x": 9*TILE_SIZE, "new_y": 1 * TILE_SIZE,}
             ],
             "earthMap": [
                 {"condition": lambda p: p.x > 30 * TILE_SIZE, "next": "centralMap", "new_x": 1 * TILE_SIZE,
-                 "new_y": 19 * TILE_SIZE}
+                 "new_y": 14 * TILE_SIZE}
             ],
             "waterMap": [
-                {"condition": lambda p: p.y < 1 * TILE_SIZE, "next": "centralMap", "new_x": 20 * TILE_SIZE, "new_y": 38 * TILE_SIZE,}
+                {"condition": lambda p: p.y < 1 * TILE_SIZE, "next": "centralMap", "new_x": 14 * TILE_SIZE, "new_y": 28 * TILE_SIZE,}
             ]
         }
 

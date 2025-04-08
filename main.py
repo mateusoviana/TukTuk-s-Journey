@@ -7,7 +7,7 @@ if __name__ == "__main__":
     pygame.mixer.init()
 
     pygame.display.set_caption("A Jornada de TukTuk")
-    window = pygame.display.set_mode((32*TILE_SIZE, 20*TILE_SIZE))
+    window = pygame.display.set_mode((30*TILE_SIZE, 30*TILE_SIZE))
     clock = pygame.time.Clock()
 
     game = Game(window, clock)
