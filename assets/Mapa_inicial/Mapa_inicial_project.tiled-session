@@ -1,0 +1,42 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Vila_Inicial.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Mapa_inicial_tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Vila_Inicial.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 241.99999999999994,
+                "y": 257.99999999999994
+            }
+        }
+    },
+    "last.imagePath": "C:/ITA/CSI-22/A história de TukTuk/TukTuk-s-Journey/assets/Mapa_inicial/Tilemap",
+    "map.height": 30,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "Mapa_inicial_tiles.tsx",
+        "Vila_Inicial.tmx"
+    ],
+    "project": "Mapa_inicial_project.tiled-project",
+    "recentFiles": [
+        "Mapa_inicial_tiles.tsx",
+        "Vila_Inicial.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
