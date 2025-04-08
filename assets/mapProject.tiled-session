@@ -3,11 +3,23 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "EasthTiles/sampleMap.tmx",
+    "activeFile": "Tiled/sampleMap.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
     "fileStates": {
+        "Earth/EarthMap/sampleMap.tmx": {
+            "scale": 1.805,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 255.95567867036016,
+                "y": 208.31024930747924
+            }
+        },
+        "Earth/EarthMap/earthSheet.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "EarthTiles/earthMap.tmx": {
             "scale": 1.805,
             "selectedLayer": 0,
@@ -16,9 +28,17 @@
                 "y": 111.91135734072023
             }
         },
-        "EarthTiles/sampleSheet.tsx": {
+        "EarthTiles/sampleMap.tmx": {
+            "scale": 2.0744140625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 255.97589680821014,
+                "y": 160.04519348460596
+            }
+        },
+        "EarthTiles/earthSheet.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1
+            "scaleInDock": 3
         },
         "EasthTiles/sampleMap.tmx": {
             "scale": 2.0744140625,
@@ -28,7 +48,7 @@
                 "y": 160.04519348460596
             }
         },
-        "EasthTiles/sampleSheet.tsx": {
+        "EasthTiles/earthSheet.tsx": {
             "scaleInDock": 1
         },
         "Tiled/sampleMap.tmx": {
@@ -39,7 +59,7 @@
                 "y": 160.04519348460596
             }
         },
-        "Tiled/sampleSheet.tsx": {
+        "Tiled/earthSheet.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 2,
             "scaleInEditor": 4
@@ -52,7 +72,7 @@
                 "y": 208.31024930747924
             }
         },
-        "Tiles_Earth/sampleSheet.tsx": {
+        "Tiles_Earth/earthSheet.tsx": {
             "scaleInDock": 1
         },
         "Tileset1/Tilemap/sample_fantasy.tmx": {
@@ -70,8 +90,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 842,
-                "y": 405
+                "x": 376,
+                "y": 439
             }
         },
         "Tileset1/tiles.tsx": {
@@ -95,35 +115,36 @@
                 "y": 169.91731767120945
             }
         },
-        "p3/Tiled/sampleSheet.tsx": {
+        "p3/Tiled/earthSheet.tsx": {
             "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/Users/mateu/PycharmProjects/JornadaDeTukTuk/assets/Tileset1/Tilesheet",
-    "map.height": 40,
+    "map.height": 20,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 40,
+    "map.width": 32,
     "openFiles": [
         "Tileset1/tiles.tsx",
         "Tileset1/map1.tmx",
-        "EasthTiles/sampleMap.tmx"
+        "Tiled/sampleMap.tmx"
     ],
     "project": "mapProject.tiled-project",
     "property.type": "int",
     "recentFiles": [
         "Tileset1/tiles.tsx",
         "Tileset1/map1.tmx",
-        "EasthTiles/sampleMap.tmx",
         "Tiled/sampleMap.tmx",
-        "Tiled/sampleSheet.tsx",
+        "EarthTiles/sampleMap.tmx",
+        "Earth/EarthMap/earthSheet.tsx",
+        "Earth/EarthMap/sampleMap.tmx",
+        "EasthTiles/sampleMap.tmx",
+        "Tiled/earthSheet.tsx",
         "EarthTiles/earthMap.tmx",
         "Tiles_Earth/earthMap.tmx",
         "p3/Tiled/sampleMap.tmx",
-        "Tileset1/Tilemap/sample_fantasy.tmx",
-        "Tileset1/tileset1.tsx",
-        "Tileset1/tileset1.2.tsx"
+        "Tileset1/Tilemap/sample_fantasy.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.spacing": 1,

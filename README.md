@@ -57,7 +57,7 @@ Or just add them directly from your IDE.
 After installing the dependencies, you can run the project with:
 
 ```sh
-python main.py  # Replace 'main.py' with the project's entry file
+python gameMain.py  # Replace 'gameMain.py' with the project's entry file
 ```
 
 ## 🗺 6. Setting Up Tiled and Using Existing Maps
