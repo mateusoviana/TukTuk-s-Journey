@@ -21,11 +21,15 @@ class Map:
         tile_x = world_x // TILE_SIZE
         tile_y = world_y // TILE_SIZE
 
-        # Verificação de limites do mapa
         width = self.tmxdata.width
         height = self.tmxdata.height
-        if 0 <= tile_x < width and 0 <= tile_y < height:
-            props = self.tmxdata.get_tile_properties(tile_x, tile_y, 0)
-            return props if props else {"solid": 0}
-        else:
-            return {"solid": 1}  # fora do mapa = bloqueado
+        if not (0 <= tile_x < width and 0 <= tile_y < height):
+            return {"solid": 1}
+
+        for layer_index, layer in enumerate(self.tmxdata.visible_layers):
+            props = self.tmxdata.get_tile_properties(tile_x, tile_y, layer_index)
+            if props and props.get("solid") == 1:
+                return {"solid": 1}
+
+        return {"solid": 0}
+

@@ -5,9 +5,9 @@ from config import TILE_SIZE
 
 class Player:
     def __init__(self, window_height):
-        self.x = 30*TILE_SIZE
+        self.x = 20*TILE_SIZE
         self.y_ground = window_height - TILE_SIZE
-        self.y = 10*TILE_SIZE
+        self.y = 19*TILE_SIZE
         self.direction = "stand"
         self.world_offset = [0, 0]
         self.load_sprites()
@@ -49,7 +49,7 @@ class Player:
         if self.x < 0: self.x = 0
         if self.x > window.get_width() - TILE_SIZE: self.x = window.get_width() - TILE_SIZE
         if self.y < 0: self.y = 0
-        if self.y > self.y_ground: self.y = self.y_ground
+        if self.y > window.get_height() - TILE_SIZE: self.y = window.get_height() - TILE_SIZE
 
     def draw(self, window):
         if self.direction == "stand":

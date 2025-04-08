@@ -28,7 +28,6 @@ class Game:
             self.player.update(current_map, self.window)
             self.player.draw(self.window)
 
-            # Checa se precisa trocar de mapa (e reposicionar o player)
             self.map_manager.update_map_if_needed(self.player)
 
             pygame.display.update()
@@ -40,6 +39,5 @@ class Game:
             if event.type == pygame.QUIT:
                 self.quit = True
 
-        # Usa o mapa atual do MapManager
         current_map = self.map_manager.get_current_map()
         self.player.handle_keys(keys, current_map, self.window)
