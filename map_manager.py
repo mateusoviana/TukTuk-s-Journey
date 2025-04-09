@@ -29,6 +29,29 @@ class MapManager:
             ]
         }
 
+        self.message_points = {
+            "centralMap": [
+                {"x": 5, "y": 24, "message": "Cogumelos são a chave para encontrar sua irmã!"},
+                {"x": 24, "y": 8, "message": "NÃO TENHO NADA PARA TE DAR!"},
+                {"x": 23, "y": 26, "message": "Desculpe, não posso te ajudar!"},
+                {"x": 14, "y": 22, "message": "Procure em outro lugar!"},
+                {"x": 6, "y": 13, "message": "Z...Z...Z...!"},
+                {"x": 9, "y": 3, "message": "SAIA DAQUI!"}, 
+            ],
+
+            "fireMap": [
+                {"x": 2, "y": 4, "message": "Eita quintura do diabo!"}
+            ],
+
+            "earthMap": [
+                {"x": 20, "y": 15, "message": "Use com moderação!"}
+            ],
+
+            "waterMap": [
+                {"x": 6, "y": 2, "message": "Tente não se afogar!"}
+            ]
+        }
+
     def get_current_map(self):
         return self.maps[self.current_map_key]
 

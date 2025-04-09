@@ -2,7 +2,7 @@ import pygame
 from map_manager import MapManager
 from player import Player
 from config import TILE_SIZE
-from ui import display_message_1
+from ui import display_message_points
 
 class Game:
     def __init__(self, window, clock):
@@ -11,7 +11,7 @@ class Game:
         self.quit = False
         self.map_manager = MapManager()
         self.player = Player(self.window.get_height())
-        self.message_shown = False
+        self.last_message_pos = None
 
     def run(self):
         while not self.quit:
@@ -30,14 +30,28 @@ class Game:
             self.player.update(current_map, self.window)
             self.player.draw(self.window)
 
-            print(self.player.x//TILE_SIZE, self.player.y//TILE_SIZE)
-            # Verifica se o jogador está na posição da dica no mapa central
-            if (self.map_manager.current_map_key == "centralMap" and 
-                self.player.x // TILE_SIZE == 5 and 
-                self.player.y // TILE_SIZE == 24 and 
-                not self.message_shown):
-                display_message_1("Cogumelos são a chave para encontrar sua irmã!", self.window)
-                self.message_shown = True
+            # Verificação de mensagens:
+
+            player_tile_x = self.player.x // TILE_SIZE
+            player_tile_y = self.player.y // TILE_SIZE
+            current_pos = (player_tile_x, player_tile_y)
+            print(current_pos)
+            
+            message_points_for_map = self.map_manager.message_points.get(self.map_manager.current_map_key, [])
+            message_to_display = None
+            point_found = None
+
+            for point in message_points_for_map:
+                if player_tile_x == point["x"] and player_tile_y == point["y"]:
+                    message_to_display = point["message"]
+                    point_found = (point["x"], point["y"])
+                    break
+            
+            if message_to_display and current_pos != self.last_message_pos:
+                display_message_points(message_to_display, self.window)
+                self.last_message_pos = current_pos
+            elif not message_to_display:
+                self.last_message_pos = None
 
             self.map_manager.update_map_if_needed(self.player)
 
