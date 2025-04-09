@@ -3,32 +3,38 @@
  <image source="../Spritesheet/roguelikeSheet_transparent.png" width="968" height="526"/>
  <tile id="0">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="1">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="2">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="3">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="4">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="5">
   <properties>
    <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="6">
@@ -288,32 +294,38 @@
  </tile>
  <tile id="57">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="58">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="59">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="60">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="61">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="62">
   <properties>
    <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="63">
@@ -573,27 +585,32 @@
  </tile>
  <tile id="114">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="115">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="116">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="117">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="1"/>
   </properties>
  </tile>
  <tile id="118">
   <properties>
-   <property name="solid" type="int" value="1"/>
+   <property name="solid" type="int" value="0"/>
+   <property name="water" type="int" value="0"/>
   </properties>
  </tile>
  <tile id="119">

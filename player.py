@@ -30,14 +30,22 @@ class Player:
             pygame.K_s: ("down", 0, TILE_SIZE),
         }
         moved = False
+        
+        current_tile = map_obj.get_tile_properties(self.x, self.y, self.world_offset)
+        speed_multiplier = 1.0
+        if current_tile["water"] == 1:
+            speed_multiplier = 0.2
+        if current_tile["grass"] == 1:
+            speed_multiplier = 0.1
+        
         for key, (dir, dx, dy) in move_map.items():
             if keys[key]:
                 self.direction = dir
                 new_x, new_y = self.x + dx, self.y + dy
                 block = map_obj.get_tile_properties(new_x, new_y, self.world_offset)
                 if block["solid"] == 0:
-                    self.x += dx
-                    self.y += dy
+                    self.x += dx * speed_multiplier
+                    self.y += dy * speed_multiplier
                 moved = True
                 break
 
