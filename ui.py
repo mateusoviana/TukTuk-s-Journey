@@ -15,7 +15,7 @@ def display_message(message, game):
 
     pygame.display.update()
 
-def display_message_1(message, game):
+def display_message_points(message, game):
     # Cria uma nova janela para a mensagem
     window_width = 300
     window_height = 150
