@@ -2,6 +2,7 @@ import pygame
 from map_manager import MapManager
 from player import Player
 from config import TILE_SIZE
+from ui import display_message_1
 
 class Game:
     def __init__(self, window, clock):
@@ -10,6 +11,7 @@ class Game:
         self.quit = False
         self.map_manager = MapManager()
         self.player = Player(self.window.get_height())
+        self.message_shown = False
 
     def run(self):
         while not self.quit:
@@ -29,6 +31,13 @@ class Game:
             self.player.draw(self.window)
 
             print(self.player.x//TILE_SIZE, self.player.y//TILE_SIZE)
+            # Verifica se o jogador está na posição da dica no mapa central
+            if (self.map_manager.current_map_key == "centralMap" and 
+                self.player.x // TILE_SIZE == 5 and 
+                self.player.y // TILE_SIZE == 24 and 
+                not self.message_shown):
+                display_message_1("Cogumelos são a chave para encontrar sua irmã!", self.window)
+                self.message_shown = True
 
             self.map_manager.update_map_if_needed(self.player)
 
