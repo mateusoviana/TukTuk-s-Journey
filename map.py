@@ -24,12 +24,19 @@ class Map:
         width = self.tmxdata.width
         height = self.tmxdata.height
         if not (0 <= tile_x < width and 0 <= tile_y < height):
-            return {"solid": 1}
+            return {"solid": 1, "water": 0, "grass": 0}
 
+        properties = {"solid": 0, "water": 0, "grass": 0}
+        
         for layer_index, layer in enumerate(self.tmxdata.visible_layers):
             props = self.tmxdata.get_tile_properties(tile_x, tile_y, layer_index)
-            if props and props.get("solid") == 1:
-                return {"solid": 1}
+            if props:
+                if props.get("solid") == 1:
+                    properties["solid"] = 1
+                if props.get("water") == 1:
+                    properties["water"] = 1
+                if props.get("grass") == 1:
+                    properties["grass"] = 1
 
-        return {"solid": 0}
+        return properties
 

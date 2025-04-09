@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" name="colored_packed" tilewidth="16" tileheight="16" tilecount="1078" columns="49">
+  <image source="../FireTilemap/colored_packed.png" width="784" height="352"/>
+  <tile id="1">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="57">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="69">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="103">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="104">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="116">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="117">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="118">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="253">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+    <property name="water" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="254">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+    <property name="water" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="255">
+   <properties>
+    <property name="solid" type="int" value="0"/>
+    <property name="water" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="313">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="445">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="504">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="505">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="593">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="594">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="595">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="642">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="643">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="644">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="692">
+   <properties>
+    <property name="solid" type="int" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1079" source="../EarthMap/earthSheet.tsx"/>
+ <layer id="1" name="Ground" width="30" height="20">
+  <data encoding="csv">
+0,0,0,0,0,4,2,2,4,0,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,
+0,0,0,0,0,4,2,2,4,4,4,1,59,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354573,2,4,4,4,
+0,0,0,0,0,4,4,4,4,0,4,1,3221225530,1,1,1,1,1,1,1,1,1,1,1,1,2,2,4,0,4,
+0,0,0,0,0,1,1,0,4,4,4,1,3221225530,1,4,0,4,4,0,4,2,2,4,0,4,2,2,4,4,4,
+4,1,1610612795,1610612794,1610612794,1610612794,2684354619,1,1,1,1,1,3221225530,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+4,1,1,1,1,1,60,2684354618,2684354618,2684354618,2684354618,2684354618,3221225531,1,0,4,4,4,4,4,19,20,20,20,20,20,20,20,20,21,
+4,4,4,4,4,1,58,1,1,1,1,1,1,0,4,4,4,0,4,4,68,4,4,4,4,4,4,4,4,70,
+4,4,0,4,4,0,58,1,4,4,2,2,2,4,4,4,4,4,4,4,68,4,5,4,2,2,2,2,2,70,
+1,1,1,1,1,1,58,1,0,4,2,2,2,4,0,4,19,20,20,20,69,5,5,5,5,5,5,5,5,70,
+2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,3221225532,1,1,1,1,1,1,1,1,4,68,4,4,4,4,5,5,5,5,5,5,5,5,70,
+1,1,1,1,1,1,60,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354619,1,1,1,1,1,1,1,5,5,5,5,5,5,5,5,70,
+4,4,4,4,2,1,58,1,1,1,1,1,1,1610612795,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,5,5,5,5,5,5,5,70,
+0,4,0,4,2,1,58,1,2,4,0,4,1,1,1,1,1,1,1,1,1,5,5,5,5,5,5,5,5,70,
+4,4,4,4,2,1,58,1,1,1,4,0,2,4,0,4,68,2,2,2,2,5,5,5,5,5,5,5,5,70,
+2,4,0,4,2,1,1610612795,2684354618,2684354619,1,4,4,4,4,4,4,117,118,118,118,3221225541,5,5,5,5,5,5,5,5,70,
+2,4,4,4,4,1,1,1,58,1,2,2,4,0,1,1,1,1,4,4,68,5,5,5,5,5,5,5,5,70,
+4,4,4,4,4,0,4,1,58,1,1,1,1,1,59,2684354618,2684354619,1,1,4,68,2,2,2,2,2,2,2,2,70,
+4,0,4,0,4,4,4,1,1610612795,2684354618,2684354618,2684354618,2684354618,2684354618,3221225531,1,1610612795,2684354619,1,1,117,118,118,118,118,118,118,118,118,119,
+4,4,4,4,4,2,4,0,1,1,1,1,1,1,1,0,1,1610612795,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354618,2684354573,4,4,4,4,
+2,4,0,4,2,2,4,4,4,2,2,4,0,4,2,4,1,1,1,1,1,1,1,1,1,4,4,4,4,0
+</data>
+ </layer>
+ <layer id="2" name="Extras" width="30" height="20">
+  <data encoding="csv">
+594,595,595,595,596,0,0,0,0,314,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+644,693,693,693,644,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+644,643,644,643,644,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,
+644,644,446,644,644,0,0,505,0,0,0,0,0,0,0,314,0,0,105,0,0,0,0,105,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,505,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,105,0,0,314,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,105,0,0,0,0,3,314,0,0,0,0,0,0,505,505,505,505,505,505,505,505,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,505,0,506,0,0,0,0,506,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,505,506,0,0,506,506,506,506,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,506,0,506,1190,0,0,0,
+314,0,505,0,0,0,0,0,0,0,505,0,0,0,0,0,0,0,0,0,0,505,0,506,0,506,506,506,0,0,
+0,0,0,0,0,0,0,0,0,0,0,105,0,0,105,0,0,0,0,0,0,505,0,0,0,0,506,0,0,0,
+0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,505,505,0,506,0,0,0,506,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,505,505,505,505,505,505,505,505,0,
+0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,505,0,314,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,105,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105
+</data>
+ </layer>
+</map>
