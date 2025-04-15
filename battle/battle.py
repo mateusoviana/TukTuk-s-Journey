@@ -25,7 +25,12 @@ def start_battle(hero, enemy, game):
     hero.hp_x, hero.hp_y = 275, 250
     enemy.hp_x, enemy.hp_y = 50, 50
 
-    game_status = 'start battle'
+    if enemy.current_hp > 0:
+        game_status = 'start battle'
+        end_warning = 'Fim da batalha!'
+    else:
+        game_status = 'gameover'
+        end_warning = 'Você já derrotou o inimigo!'
 
     while game_status != 'gameover':
         game.fill(white)
@@ -119,6 +124,6 @@ def start_battle(hero, enemy, game):
     pygame.display.update()
     time.sleep(1)
 
-    display_message('Fim da batalha!', game)
+    display_message(end_warning, game)
     pygame.display.update()
     time.sleep(3)
