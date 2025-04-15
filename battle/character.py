@@ -2,7 +2,7 @@ import pygame
 import random
 import time
 import math
-from move import Move
+from .move import Move
 
 class Character(pygame.sprite.Sprite):
     def __init__(self, name, data, level, x, y):
@@ -39,8 +39,8 @@ class Character(pygame.sprite.Sprite):
         else:
             self.image = pygame.Surface((self.size, self.size), pygame.SRCALPHA)
 
-        scale = self.size / self.image.get_width()
-        self.image = pygame.transform.scale(self.image, (int(self.image.get_width() * scale), int(self.image.get_height() * scale)))
+        # Redimensiona a sprite para o tamanho desejado
+        self.image = pygame.transform.scale(self.image, (self.size, self.size))
 
     def perform_attack(self, target, move, game):
         from ui import display_message
