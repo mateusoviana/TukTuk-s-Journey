@@ -46,7 +46,7 @@ class MapManager:
             ],
 
             "earthMap": [
-                {"x": 20, "y": 15, "message": "Use com moderação!"}
+                {"x": 11, "y": 2, "message": "Está fechado!"}
             ],
 
             "waterMap": [
@@ -67,6 +67,12 @@ class MapManager:
             ],
             "earthMap": [
                 {"x": 3, "y": 10, "enemy": Enemy("Earth Boss", CHARACTER_DATA['earth_boss'], level=25, x=0, y=0)},
+            ]
+        }
+
+        self.extra_points = {
+            "earthMap": [
+                {"x": 20, "y": 16, "extra": 'potion'}
             ]
         }
 
@@ -97,4 +103,11 @@ class MapManager:
         for point in battle_points:
             if player_x == point["x"] and player_y == point["y"]:
                 return point["enemy"]
+        return None
+    
+    def get_extra_points(self, player_x, player_y):
+        extra_points = self.extra_points.get(self.current_map_key, [])
+        for point in extra_points:
+            if player_x == point["x"] and player_y == point["y"]:
+                return point["extra"]
         return None

@@ -76,6 +76,7 @@ class Game:
                     player_tile_x = self.player.x // TILE_SIZE
                     player_tile_y = self.player.y // TILE_SIZE
                     enemy = self.map_manager.check_battle_point(player_tile_x, player_tile_y)
+                    extra = self.map_manager.get_extra_points(player_tile_x, player_tile_y)
                     # Se existir um enemy:
                     if enemy:
                         # Salva o tamanho original da tela
@@ -88,7 +89,12 @@ class Game:
                         if self.original_screen_size:
                             self.window = pygame.display.set_mode(self.original_screen_size)
                         # Reseta a vida do herói após a batalha
-                        self.battle_hero.current_hp = self.battle_hero.max_hp
+                        # self.battle_hero.current_hp = self.battle_hero.max_hp
+                    # Se existir um extra:
+                    if extra:
+                        if extra == 'potion':
+                            self.battle_hero.num_potions += 1
+                            display_message_points('Você ganhou uma poção!', self.window)
 
         current_map = self.map_manager.get_current_map()
         self.player.handle_keys(keys, current_map, self.window)

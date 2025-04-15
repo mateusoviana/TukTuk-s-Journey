@@ -72,7 +72,11 @@ def start_battle(hero, enemy, game):
                             hero.use_potion()
                             display_message(f'{hero.name} usou uma poção!', game)
                             time.sleep(2)
-                        game_status = 'enemy turn'
+                            game_status = 'player turn'
+                        else:
+                            display_message('Suas poções acabaram!', game)
+                            time.sleep(2)
+                            game_status = 'player turn'
 
         elif game_status == 'player move':
             move_buttons = []
