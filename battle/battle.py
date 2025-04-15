@@ -11,6 +11,10 @@ from ui import display_message, create_button
 def start_battle(hero, enemy, game):
     white = (255, 255, 255)
 
+    # Salvando os tamanhos originais (Problema do resize do sprite)
+    hero_original_size = hero.size
+    enemy_original_size = enemy.size
+
     hero.set_sprite('back_default')
     enemy.set_sprite('front_default')
 
@@ -82,6 +86,9 @@ def start_battle(hero, enemy, game):
                     for button, move in move_buttons:
                         if button.collidepoint(event.pos):
                             hero.perform_attack(enemy, move, game)
+                            if enemy.current_hp <= 0:
+                                # Pausa de 1 segundo para o efeito de ataque
+                                time.sleep(1)
                             game_status = 'enemy turn' if enemy.current_hp > 0 else 'gameover'
                             break
 
@@ -93,10 +100,25 @@ def start_battle(hero, enemy, game):
             enemy.draw_hp(game)
             pygame.display.update()
             enemy.perform_attack(hero, move, game)
-            time.sleep(1.5)
+            if hero.current_hp <= 0:
+                # Pausa de 1 segundo para o efeito de ataque
+                time.sleep(1)
             game_status = 'player turn' if hero.current_hp > 0 else 'gameover'
 
-        elif game_status == 'gameover':
-            display_message('Fim da batalha!', game)
-            pygame.display.update()
-            time.sleep(3)
+    # Restaurando os tamanhos originais
+    hero.size = hero_original_size
+    enemy.size = enemy_original_size
+    hero.set_sprite('back_default')
+    enemy.set_sprite('front_default')
+
+    game.fill(white)
+    hero.draw(game)
+    enemy.draw(game)
+    hero.draw_hp(game)
+    enemy.draw_hp(game)
+    pygame.display.update()
+    time.sleep(1)
+
+    display_message('Fim da batalha!', game)
+    pygame.display.update()
+    time.sleep(3)

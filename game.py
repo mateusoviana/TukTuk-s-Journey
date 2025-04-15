@@ -1,8 +1,11 @@
 import pygame
 from map_manager import MapManager
 from player import Player
-from config import TILE_SIZE
+from config import TILE_SIZE, BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT
 from ui import display_message_points
+from battle.battle import start_battle
+from battle.data import CHARACTER_DATA
+from battle.character import Hero
 
 class Game:
     def __init__(self, window, clock):
@@ -12,6 +15,10 @@ class Game:
         self.map_manager = MapManager()
         self.player = Player(self.window.get_height())
         self.last_message_pos = None
+        # Criando o personagem do jogador para batalha
+        self.battle_hero = Hero("TukTuk", CHARACTER_DATA['tuktuk'], level=30, x=0, y=0)
+        # Guardando o tamanho original da tela
+        self.original_screen_size = None
 
     def run(self):
         while not self.quit:
@@ -63,6 +70,25 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.quit = True
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    # Analisa se o jogador está em um tile de batalha:
+                    player_tile_x = self.player.x // TILE_SIZE
+                    player_tile_y = self.player.y // TILE_SIZE
+                    enemy = self.map_manager.check_battle_point(player_tile_x, player_tile_y)
+                    # Se existir um enemy:
+                    if enemy:
+                        # Salva o tamanho original da tela
+                        self.original_screen_size = self.window.get_size()
+                        # Ajusta o tamanho da tela para a batalha
+                        self.window = pygame.display.set_mode((BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT))
+                        # Inicia a batalha
+                        start_battle(self.battle_hero, enemy, self.window)
+                        # Restaura o tamanho original da tela
+                        if self.original_screen_size:
+                            self.window = pygame.display.set_mode(self.original_screen_size)
+                        # Reseta a vida do herói após a batalha
+                        self.battle_hero.current_hp = self.battle_hero.max_hp
 
         current_map = self.map_manager.get_current_map()
         self.player.handle_keys(keys, current_map, self.window)

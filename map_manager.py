@@ -1,5 +1,7 @@
 from map import Map
 from config import TILE_SIZE
+from battle.character import Hero, Enemy
+from battle.data import CHARACTER_DATA
 
 class MapManager:
     def __init__(self):
@@ -52,6 +54,22 @@ class MapManager:
             ]
         }
 
+        # Adicionando pontos de batalha
+        self.battle_points = {
+            "centralMap": [
+                {"x": 15, "y": 15, "enemy": Enemy("Wind Boss", CHARACTER_DATA['wind_boss'], level=25, x=0, y=0)},
+            ],
+            "fireMap": [
+                {"x": 26, "y": 11, "enemy": Enemy("Fire Boss", CHARACTER_DATA['fire_boss'], level=25, x=0, y=0)},
+            ],
+            "waterMap": [
+                {"x": 9, "y": 29, "enemy": Enemy("Water Boss", CHARACTER_DATA['water_boss'], level=25, x=0, y=0)},
+            ],
+            "earthMap": [
+                {"x": 3, "y": 10, "enemy": Enemy("Earth Boss", CHARACTER_DATA['earth_boss'], level=25, x=0, y=0)},
+            ]
+        }
+
     def get_current_map(self):
         return self.maps[self.current_map_key]
 
@@ -72,3 +90,11 @@ class MapManager:
     def get_map_size(self):
         current = self.get_current_map()
         return current.tmxdata.width * TILE_SIZE, current.tmxdata.height * TILE_SIZE
+
+    def check_battle_point(self, player_x, player_y):
+        """Verifica se o jogador está em um ponto de batalha e retorna o inimigo se estiver"""
+        battle_points = self.battle_points.get(self.current_map_key, [])
+        for point in battle_points:
+            if player_x == point["x"] and player_y == point["y"]:
+                return point["enemy"]
+        return None
