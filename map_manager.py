@@ -2,6 +2,7 @@ from map import Map
 from config import TILE_SIZE
 from battle.character import Hero, Enemy
 from battle.data import CHARACTER_DATA
+from ui import display_message_points
 
 class MapManager:
     def __init__(self):
@@ -10,14 +11,17 @@ class MapManager:
             "earthMap": Map("assets/EarthMap/earthMap.tmx"),
             "waterMap": Map("assets/WaterMap/waterMap.tmx"),
             "fireMap": Map("assets/FireMap/fireMap.tmx"),
+            "bossMap": Map("assets/BossMap/bossMap.tmx"),
         }
         self.current_map_key = "centralMap"
+        self.game = None  # Referência ao jogo será definida posteriormente
 
         self.transition_points = {
             "centralMap": [
                 {"condition": lambda p: p.x < TILE_SIZE and p.y > TILE_SIZE*13 and p.y < TILE_SIZE*15, "next": "earthMap", "new_x": 30*TILE_SIZE, "new_y": 10*TILE_SIZE},
                 {"condition": lambda p: p.x > 13*TILE_SIZE and p.x < 15*TILE_SIZE and p.y > 28 * TILE_SIZE, "next": "waterMap", "new_x": 9*TILE_SIZE, "new_y": 1 * TILE_SIZE},
                 {"condition": lambda p: p.x > 28*TILE_SIZE and p.y > 12*TILE_SIZE and p.y < 14 * TILE_SIZE, "next": "fireMap", "new_x": TILE_SIZE, "new_y": 10 * TILE_SIZE},
+                {"condition": lambda p: p.x > 14*TILE_SIZE and p.x < 16*TILE_SIZE and p.y < 4*TILE_SIZE, "next": "bossMap", "new_x": 15*TILE_SIZE, "new_y": 28*TILE_SIZE},
             ],
             "earthMap": [
                 {"condition": lambda p: p.x > 30 * TILE_SIZE, "next": "centralMap", "new_x": 1 * TILE_SIZE,
@@ -28,6 +32,9 @@ class MapManager:
             ],
             "fireMap": [
                 {"condition": lambda p: p.x < TILE_SIZE and p.y > 8*TILE_SIZE and p.y < 10 * TILE_SIZE, "next": "centralMap", "new_x": 28 * TILE_SIZE, "new_y": 13 * TILE_SIZE},
+            ],
+            "bossMap": [
+                {"condition": lambda p: p.x > 12*TILE_SIZE and p.x < 17*TILE_SIZE and p.y > 28 * TILE_SIZE, "next": "centralMap", "new_x": 15 * TILE_SIZE, "new_y": 4 * TILE_SIZE},
             ]
         }
 
@@ -56,9 +63,6 @@ class MapManager:
 
         # Adicionando pontos de batalha
         self.battle_points = {
-            "centralMap": [
-                {"x": 15, "y": 15, "enemy": Enemy("Wind Boss", CHARACTER_DATA['wind_boss'], level=25, x=0, y=0)},
-            ],
             "fireMap": [
                 {"x": 26, "y": 11, "enemy": Enemy("Fire Boss", CHARACTER_DATA['fire_boss'], level=25, x=0, y=0)},
             ],
@@ -67,6 +71,9 @@ class MapManager:
             ],
             "earthMap": [
                 {"x": 3, "y": 10, "enemy": Enemy("Earth Boss", CHARACTER_DATA['earth_boss'], level=25, x=0, y=0)},
+            ],
+            "bossMap": [
+                {"x": 14, "y": 3, "enemy": Enemy("Final Boss", CHARACTER_DATA['final_boss'], level=25, x=0, y=0)},
             ]
         }
 
@@ -86,6 +93,12 @@ class MapManager:
                 break
 
     def _switch_map(self, new_map_key, player, point):
+        # Verifica se é uma tentativa de acessar o bossMap
+        if new_map_key == "bossMap" and not self.game.can_access_boss_map():
+            # Exibe mensagem informando que precisa derrotar todos os bosses
+            display_message_points("Você precisa derrotar todos os bosses antes de acessar esta área!", self.game.window)
+            return  # Não permite a transição
+        
         self.current_map_key = new_map_key
         if point["new_x"] is not None:
             player.x = point["new_x"]
@@ -111,3 +124,6 @@ class MapManager:
             if player_x == point["x"] and player_y == point["y"]:
                 return point["extra"]
         return None
+
+    def set_game(self, game):
+        self.game = game

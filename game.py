@@ -19,6 +19,12 @@ class Game:
         self.battle_hero = Hero("TukTuk", CHARACTER_DATA['tuktuk'], level=30, x=0, y=0)
         # Guardando o tamanho original da tela
         self.original_screen_size = None
+        # Rastreamento de bosses derrotados
+        self.defeated_bosses = {
+            "fire_boss": False,
+            "water_boss": False,
+            "earth_boss": False
+        }
 
     def run(self):
         while not self.quit:
@@ -85,11 +91,18 @@ class Game:
                         self.window = pygame.display.set_mode((BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT))
                         # Inicia a batalha
                         start_battle(self.battle_hero, enemy, self.window)
+                        # Verifica se o inimigo foi derrotado
+                        if enemy.current_hp <= 0:
+                            # Atualiza o status do boss derrotado
+                            if enemy.name == "Fire Boss":
+                                self.defeated_bosses["fire_boss"] = True
+                            elif enemy.name == "Water Boss":
+                                self.defeated_bosses["water_boss"] = True
+                            elif enemy.name == "Earth Boss":
+                                self.defeated_bosses["earth_boss"] = True
                         # Restaura o tamanho original da tela
                         if self.original_screen_size:
                             self.window = pygame.display.set_mode(self.original_screen_size)
-                        # Reseta a vida do herói após a batalha
-                        # self.battle_hero.current_hp = self.battle_hero.max_hp
                     # Se existir um extra:
                     if extra:
                         if extra == 'potion':
@@ -98,3 +111,7 @@ class Game:
 
         current_map = self.map_manager.get_current_map()
         self.player.handle_keys(keys, current_map, self.window)
+
+    def can_access_boss_map(self):
+        # Verifica se todos os bosses foram derrotados
+        return all(self.defeated_bosses.values())
