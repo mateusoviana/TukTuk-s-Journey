@@ -99,3 +99,34 @@ def create_button(width, height, left, top, text_cx, text_cy, label):
     screen.blit(text, text_rect)
 
     return button
+
+def display_game_over(game):
+    # Cria uma nova superfície para a tela de game over
+    game_over_surface = pygame.Surface(game.get_size())
+    game_over_surface.fill((0, 0, 0))  # Fundo preto
+    
+    # Configura a fonte para o texto
+    font = pygame.font.Font(None, 74)
+    text = font.render("FIM DE JOGO", True, (255, 0, 0))
+    text_rect = text.get_rect(center=(game.get_width() // 2, game.get_height() // 2))
+    
+    # Desenha o texto na superfície
+    game_over_surface.blit(text, text_rect)
+    
+    # Desenha a superfície na tela principal
+    game.blit(game_over_surface, (0, 0))
+    pygame.display.update()
+    
+    # Mantém a tela aberta até o jogador fechar a janela
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                waiting = False
+                pygame.quit()
+                exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    waiting = False
+                    pygame.quit()
+                    exit()

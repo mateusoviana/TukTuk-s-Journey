@@ -11,6 +11,7 @@ if __name__ == "__main__":
     clock = pygame.time.Clock()
 
     game = Game(window, clock)
+    game.map_manager.set_game(game)
     game.run()
 
     pygame.quit()

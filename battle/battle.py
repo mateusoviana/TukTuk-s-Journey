@@ -6,7 +6,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from ui import display_message, create_button
+from ui import display_message, create_button, display_game_over
 
 def start_battle(hero, enemy, game):
     white = (255, 255, 255)
@@ -111,6 +111,9 @@ def start_battle(hero, enemy, game):
             if hero.current_hp <= 0:
                 # Pausa de 1 segundo para o efeito de ataque
                 time.sleep(1)
+                # Exibe a tela de game over
+                display_game_over(game)
+                return  # Encerra a função de batalha
             game_status = 'player turn' if hero.current_hp > 0 else 'gameover'
 
     # Restaurando os tamanhos originais

@@ -72,19 +72,19 @@ CHARACTER_DATA = {
             'front_default': 'battle/sprites/earthboss.png',
         }
     },
-    'wind_boss': {
-        'name': 'Wind Boss',
+    'final_boss': {
+        'name': 'Final Boss',
         'stats': {
             'hp': 50,
             'attack': 50,
             'defense': 45,
             'speed': 70
         },
-        'types': ['wind'],
+        'types': ['neutral'],
         'moves': [
-            {'name': 'gust', 'power': 40, 'type': 'wind', 'level_learned': 1},
-            {'name': 'air slice', 'power': 60, 'type': 'wind', 'level_learned': 12},
-            {'name': 'tempest fury', 'power': 80, 'type': 'wind', 'level_learned': 20}
+            {'name': 'gust', 'power': 40, 'type': 'neutral', 'level_learned': 1},
+            {'name': 'air slice', 'power': 60, 'type': 'neutral', 'level_learned': 12},
+            {'name': 'tempest fury', 'power': 80, 'type': 'neutral', 'level_learned': 20}
         ],
         'sprites': {
             'front_default': 'battle/sprites/windboss.png',

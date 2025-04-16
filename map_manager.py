@@ -1,6 +1,9 @@
 from map import Map
 from map_data import MAPS, TRANSITION_POINTS, MESSAGE_POINTS, BATTLE_POINTS, EXTRA_POINTS
 from config import TILE_SIZE
+from battle.character import Hero, Enemy
+from battle.data import CHARACTER_DATA
+from ui import display_message_points
 
 class MapManager:
     def __init__(self):
@@ -9,11 +12,12 @@ class MapManager:
             for map_name in MAPS
         }
         self.current_map_key = "centralMap"
-
+        self.game = None  # Referência ao jogo será definida posteriormente
         self.transition_points = TRANSITION_POINTS
         self.message_points = MESSAGE_POINTS
         self.battle_points = BATTLE_POINTS
         self.extra_points = EXTRA_POINTS
+
 
     def get_current_map(self):
         return self.maps[self.current_map_key]
@@ -25,6 +29,12 @@ class MapManager:
                 break
 
     def _switch_map(self, new_map_key, player, point):
+        # Verifica se é uma tentativa de acessar o bossMap
+        if new_map_key == "bossMap" and not self.game.can_access_boss_map():
+            # Exibe mensagem informando que precisa derrotar todos os bosses
+            display_message_points("Você precisa derrotar todos os bosses antes de acessar esta área!", self.game.window)
+            return  # Não permite a transição
+        
         self.current_map_key = new_map_key
         if point["new_x"] is not None:
             player.x = point["new_x"]
@@ -49,3 +59,7 @@ class MapManager:
             if player_x == point["x"] and player_y == point["y"]:
                 return point["extra"]
         return None
+
+    def set_game(self, game):
+        self.game = game
+
