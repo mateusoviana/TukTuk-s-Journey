@@ -2,7 +2,7 @@ import pygame
 from map_manager import MapManager
 from player import Player
 from config import TILE_SIZE, BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT
-from ui import display_message_points
+from ui import display_message_points, display_victory_screen
 from battle.battle import start_battle
 from battle.data import CHARACTER_DATA
 from battle.character import Hero
@@ -115,6 +115,11 @@ class Game:
                                 self.defeated_bosses["water_boss"] = True
                             elif enemy.name == "Earth Boss":
                                 self.defeated_bosses["earth_boss"] = True
+                            # Verifica se é o boss final
+                            elif enemy.name == "Final Boss":
+                                # Exibe a tela de vitória
+                                display_victory_screen(self.window)
+                                self.quit = True
                         # Restaura o tamanho original da tela
                         if self.original_screen_size:
                             self.window = pygame.display.set_mode(self.original_screen_size)
