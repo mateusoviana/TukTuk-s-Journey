@@ -22,6 +22,7 @@ MAP_PATHS = {
     "earthMap": "assets/EarthMap/earthMap.tmx",
     "waterMap": "assets/WaterMap/waterMap.tmx",
     "fireMap": "assets/FireMap/fireMap.tmx",
+    "bossMap": "assets/FireMap/fireMap.tmx",
 }
 
 TRANSITION_POINTS = {
@@ -43,6 +44,12 @@ TRANSITION_POINTS = {
             "next": "fireMap",
             "new_x": TILE_SIZE,
             "new_y": 10 * TILE_SIZE,
+        },
+        {
+            "condition": lambda p: 13 * TILE_SIZE < p.x < 16 * TILE_SIZE and p.y < 4 * TILE_SIZE,
+            "next": "bossMap",
+            "new_x": 28 * TILE_SIZE,
+            "new_y": 13 * TILE_SIZE,
         },
     ],
     "earthMap": [
@@ -69,6 +76,14 @@ TRANSITION_POINTS = {
             "new_y": 13 * TILE_SIZE,
         },
     ],
+    "bossMap": [
+        {
+            "condition": lambda p: 13 * TILE_SIZE < p.x < 16 * TILE_SIZE and p.y < 4 * TILE_SIZE,
+            "next": "centralMap",
+            "new_x": 28 * TILE_SIZE,
+            "new_y": 13 * TILE_SIZE,
+        },
+    ]
 }
 
 MESSAGE_POINTS = {
