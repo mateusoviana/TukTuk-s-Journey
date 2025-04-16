@@ -41,16 +41,6 @@ class Character(pygame.sprite.Sprite):
         # Redimensiona a sprite para o tamanho desejado
         self.image = pygame.transform.scale(self.image, (self.size, self.size))
 
-    def perform_attack(self, target, move, game):
-        from ui import display_message
-        display_message(f'{self.name} usou {move.name}!', game)
-        time.sleep(2)
-        damage = (2 * self.level + 10) / 250 * self.attack / target.defense * move.power
-        if move.type in self.types:
-            damage *= 1.5
-        if random.randint(1, 10000) <= 625:
-            damage *= 1.5
-        target.take_damage(int(damage))
 
     def take_damage(self, amount):
         self.current_hp = max(0, self.current_hp - amount)
@@ -97,5 +87,32 @@ class Hero(Character):
             self.current_hp = min(self.max_hp, self.current_hp + 30)
             self.num_potions -= 1
 
+    def perform_attack(self, target, move, game):
+        from ui import display_message
+        display_message(f'{self.name} usou {move.name}!', game)
+        time.sleep(2)
+        damage = (2 * self.level + 10) / 250 * self.attack / target.defense * move.power
+        if move.type in self.types:
+            damage *= 1.5
+        if random.randint(1, 10000) <= 625:
+            damage *= 1.5
+        if type(self) is Enemy:
+            self.current_hp += 2
+        target.take_damage(int(damage))
+
 class Enemy(Character):
-    pass
+
+    def __init__(self, name, data, level, x, y):
+        super().__init__(name, data, level, x, y)
+
+    def perform_attack(self, target, move, game):
+        from ui import display_message
+        display_message(f'{self.name} usou {move.name}!', game)
+        time.sleep(2)
+        damage = (2 * self.level + 10) / 250 * self.attack / target.defense * move.power
+        if move.type in self.types:
+            damage *= 1.5
+        if random.randint(1, 10000) <= 625:
+            damage *= 1.5
+        self.current_hp += 2
+        target.take_damage(int(damage))
