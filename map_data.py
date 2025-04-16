@@ -84,3 +84,11 @@ EXTRA_POINTS = {
         {"x": 20, "y": 16, "extra": 'potion'}
     ]
 }
+
+MAP_MUSIC = {
+    "centralMap": "assets/Sounds/central_map.mp3",  # Música do mapa central
+    "fireMap": "assets/Sounds/fire_map.mp3",       # Música do mapa de fogo
+    "waterMap": "assets/Sounds/water_map.mp3",      # Música do mapa de água
+    "earthMap": "assets/Sounds/earth_map.mp3",      # Música do mapa de terra
+    "bossMap": "assets/Sounds/boss_map.mp3"        # Música do mapa do boss
+}

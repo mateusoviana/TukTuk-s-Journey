@@ -12,7 +12,6 @@ class Map:
             raise ValueError(f"Map {map_name} not found!")
 
         self.map_path = map_data["map_path"]
-        # self.music_path = map_data["music_path]
 
         self.tmxdata = load_pygame(self.map_path)
 

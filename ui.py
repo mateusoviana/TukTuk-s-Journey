@@ -1,5 +1,12 @@
 import pygame
 
+def play_music(music_path, loops=-1):
+    pygame.mixer.music.load(music_path)
+    pygame.mixer.music.play(loops)
+
+def stop_music():
+    pygame.mixer.music.stop()
+
 def display_message(message, game):
     white = (255, 255, 255)
     black = (0, 0, 0)
@@ -101,6 +108,10 @@ def create_button(width, height, left, top, text_cx, text_cy, label):
     return button
 
 def display_game_over(game):
+    # Para a música atual e toca a música de game over
+    stop_music()
+    play_music("assets/Sounds/game_over.mp3")  # Música de game over
+    
     # Cria uma nova superfície para a tela de game over
     game_over_surface = pygame.Surface(game.get_size())
     
@@ -118,16 +129,22 @@ def display_game_over(game):
     while waiting:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                stop_music()
                 waiting = False
                 pygame.quit()
                 exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    stop_music()
                     waiting = False
                     pygame.quit()
                     exit()
 
 def display_victory_screen(game):
+    # Para a música atual e toca a música de vitória
+    stop_music()
+    play_music("assets/Sounds/victory.mp3")  # Música de vitória
+    
     # Cria uma nova superfície para a tela de vitória
     victory_surface = pygame.Surface(game.get_size())
     
@@ -147,11 +164,13 @@ def display_victory_screen(game):
     while waiting:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                stop_music()
                 waiting = False
                 pygame.quit()
                 exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    stop_music()
                     waiting = False
                     pygame.quit()
                     exit()
