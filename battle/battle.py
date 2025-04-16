@@ -11,7 +11,6 @@ from ui import display_message, create_button, display_game_over
 def start_battle(hero, enemy, game):
     white = (255, 255, 255)
 
-    # Salvando os tamanhos originais (Problema do resize do sprite)
     hero_original_size = hero.size
     enemy_original_size = enemy.size
 

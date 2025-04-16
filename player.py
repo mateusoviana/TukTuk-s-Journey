@@ -16,18 +16,18 @@ class Player:
         self.left_frame = 0
 
     def load_sprites(self):
-        self.front = pygame.transform.scale(pygame.image.load("assets/p3/f1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
-        self.back = pygame.transform.scale(pygame.image.load("assets/p3/b1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
-        self.right = pygame.transform.scale(pygame.image.load("assets/p3/r1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
-        self.left = pygame.transform.scale(pygame.image.load("assets/p3/l1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
+        self.front = pygame.transform.scale(pygame.image.load("assets/Player/f1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
+        self.back = pygame.transform.scale(pygame.image.load("assets/Player/b1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
+        self.right = pygame.transform.scale(pygame.image.load("assets/Player/r1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
+        self.left = pygame.transform.scale(pygame.image.load("assets/Player/l1.png").convert_alpha(), (TILE_SIZE, TILE_SIZE))
 
-        up_paths = [f"assets/p3/b{str(i)}.png" for i in range(1, 4)]
+        up_paths = [f"assets/Player/b{str(i)}.png" for i in range(1, 4)]
         self.up_walk = [pygame.transform.scale(pygame.image.load(p).convert_alpha(), (TILE_SIZE, TILE_SIZE)) for p in up_paths]
 
-        down_paths = [f"assets/p3/f{str(i)}.png" for i in range(1, 4)]
+        down_paths = [f"assets/Player/f{str(i)}.png" for i in range(1, 4)]
         self.down_walk = [pygame.transform.scale(pygame.image.load(p).convert_alpha(), (TILE_SIZE, TILE_SIZE)) for p in down_paths]
 
-        right_paths = [f"assets/p3/r{str(i)}.png" for i in range(1, 5)]
+        right_paths = [f"assets/Player/r{str(i)}.png" for i in range(1, 5)]
         self.right_walk = [pygame.transform.scale(pygame.image.load(p).convert_alpha(), (TILE_SIZE, TILE_SIZE)) for p in right_paths]
         self.left_walk = [pygame.transform.flip(img, True, False) for img in self.right_walk]
 
@@ -40,7 +40,7 @@ class Player:
         }
         moved = False
         
-        current_tile = map_obj.get_tile_properties(self.x, self.y, self.world_offset)
+        current_tile = map_obj.get_tile_properties(self.x, self.y)
         speed_multiplier = 1.0
         if current_tile["water"] == 1:
             speed_multiplier = 0.2
@@ -51,7 +51,7 @@ class Player:
             if keys[key]:
                 self.direction = dir
                 new_x, new_y = self.x + dx, self.y + dy
-                block = map_obj.get_tile_properties(new_x, new_y, self.world_offset)
+                block = map_obj.get_tile_properties(new_x, new_y)
                 if block["solid"] == 0:
                     self.x += dx * speed_multiplier
                     self.y += dy * speed_multiplier
