@@ -7,6 +7,7 @@ class Map:
     def __init__(self, map_path):
         self.tmxdata = load_pygame(map_path)
 
+
     def draw(self, window, offset):
         for layer in self.tmxdata:
             for tile in layer.tiles():
