@@ -32,7 +32,7 @@ class Game:
                 self.window = pygame.display.set_mode((map_width, map_height))
 
             self.window.fill((64, 64, 64))
-            current_map.draw(self.window, self.player.world_offset)
+            current_map.draw(self.window)
 
             self.player.update(current_map, self.window)
             self.player.draw(self.window)
@@ -63,7 +63,7 @@ class Game:
             self.map_manager.update_map_if_needed(self.player)
 
             pygame.display.update()
-            self.clock.tick(15)
+            self.clock.tick(10)
 
     def handle_events(self):
         keys = pygame.key.get_pressed()
