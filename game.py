@@ -2,11 +2,12 @@ import pygame
 from map_manager import MapManager
 from player import Player
 from config import TILE_SIZE, BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT
-from ui import display_message_points, display_victory_screen
+from ui import display_message_points, display_victory_screen, play_music, stop_music
 from battle.battle import start_battle
 from battle.data import CHARACTER_DATA
 from battle.character import Hero
 from menu import show_menu  # Importando o menu para ser exibido antes do jogo
+from map_data import MAP_MUSIC
 
 class Game:
     def __init__(self, window, clock):
@@ -20,6 +21,7 @@ class Game:
         self.battle_hero = Hero("TukTuk", CHARACTER_DATA['tuktuk'], level=30, x=0, y=0)
         # Guardando o tamanho original da tela
         self.original_screen_size = None
+        self.current_map_music = None
 
         # Rastreamento de bosses derrotados
         self.defeated_bosses = {
@@ -34,10 +36,19 @@ class Game:
         """Função chamada quando o jogador clica em 'Play'."""
         self.game_started = True  # Marca que o jogo foi iniciado
 
+    def change_map_music(self, new_map_key):
+        if new_map_key in MAP_MUSIC and MAP_MUSIC[new_map_key] != self.current_map_music:
+            stop_music()
+            play_music(MAP_MUSIC[new_map_key])
+            self.current_map_music = MAP_MUSIC[new_map_key]
 
     def run(self):
         # Mostrar o menu até que o jogador clique em "Play"
-        self.game_started = show_menu()  #  # O menu foi fechado e o jogo começa
+        self.game_started = show_menu()
+
+        # Inicia a música do mapa central quando o jogo começa
+        if self.game_started:
+            self.change_map_music("centralMap")
 
         while not self.quit and self.game_started:
             self.handle_events()
@@ -50,6 +61,10 @@ class Game:
 
     def run_game(self):
         current_map = self.map_manager.get_current_map()
+
+        # Verifica se mudou de mapa e atualiza a música
+        if MAP_MUSIC.get(self.map_manager.current_map_key) != self.current_map_music:
+            self.change_map_music(self.map_manager.current_map_key)
 
         map_width = current_map.tmxdata.width * TILE_SIZE
         map_height = current_map.tmxdata.height * TILE_SIZE
@@ -66,6 +81,7 @@ class Game:
         player_tile_x = self.player.x // TILE_SIZE
         player_tile_y = self.player.y // TILE_SIZE
         current_pos = (player_tile_x, player_tile_y)
+        print(current_pos)
 
         message_points_for_map = self.map_manager.message_points.get(self.map_manager.current_map_key, [])
         message_to_display = None
