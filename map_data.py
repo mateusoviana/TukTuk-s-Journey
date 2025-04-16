@@ -55,10 +55,12 @@ MESSAGE_POINTS = {
         {"x": 2, "y": 4, "message": "Eita quintura do diabo!"}
     ],
     "earthMap": [
-        {"x": 11, "y": 2, "message": "Está fechado!"}
     ],
     "waterMap": [
         {"x": 6, "y": 2, "message": "Tente não se afogar!"}
+    ],
+    "bossMap": [
+        {"x": 15, "y": 27, "message": "- Muahahaha! Você nunca vai me encontrar!"}
     ]
 }
 
@@ -81,7 +83,8 @@ BATTLE_POINTS = {
 # Pontos extras
 EXTRA_POINTS = {
     "earthMap": [
-        {"x": 20, "y": 16, "extra": 'potion'}
+        {"x": 20, "y": 16, "extra": 'potion'},
+        {"x": 11, "y": 2, "extra": "chest"}
     ]
 }
 

@@ -57,16 +57,16 @@ CHARACTER_DATA = {
     'earth_boss': {
         'name': 'Earth Boss',
         'stats': {
-            'hp': 65,
+            'hp': 50,
             'attack': 50,
-            'defense': 70,
-            'speed': 35
+            'defense': 45,
+            'speed': 70
         },
         'types': ['earth'],
         'moves': [
-            {'name': 'Pedrada', 'power': 50, 'type': 'earth', 'level_learned': 1},
-            {'name': 'Nuvem de Poeira', 'power': 55, 'type': 'earth', 'level_learned': 10},
-            {'name': 'Terremoto', 'power': 75, 'type': 'earth', 'level_learned': 20}
+            {'name': 'Pedrada', 'power': 40, 'type': 'earth', 'level_learned': 1},
+            {'name': 'Nuvem de Poeira', 'power': 60, 'type': 'earth', 'level_learned': 12},
+            {'name': 'Terremoto', 'power': 80, 'type': 'earth', 'level_learned': 20}
         ],
         'sprites': {
             'front_default': 'battle/sprites/earthboss.png',
@@ -75,16 +75,16 @@ CHARACTER_DATA = {
     'final_boss': {
         'name': 'Final Boss',
         'stats': {
-            'hp': 50,
+            'hp': 65,
             'attack': 50,
-            'defense': 45,
-            'speed': 70
+            'defense': 70,
+            'speed': 35
         },
         'types': ['neutral'],
         'moves': [
-            {'name': 'Rajada', 'power': 40, 'type': 'neutral', 'level_learned': 1},
-            {'name': 'Fúria de Tempestade', 'power': 60, 'type': 'neutral', 'level_learned': 12},
-            {'name': 'Sopro da Morte', 'power': 80, 'type': 'neutral', 'level_learned': 20}
+            {'name': 'Rajada', 'power': 50, 'type': 'neutral', 'level_learned': 1},
+            {'name': 'Fúria de Tempestade', 'power': 55, 'type': 'neutral', 'level_learned': 10},
+            {'name': 'Sopro da Morte', 'power': 75, 'type': 'neutral', 'level_learned': 20}
         ],
         'sprites': {
             'front_default': 'battle/sprites/windboss.png',

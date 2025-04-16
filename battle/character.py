@@ -10,7 +10,6 @@ class Character(pygame.sprite.Sprite):
         self.name = name
         self.level = level
         self.x, self.y = x, y
-        self.num_potions = 3
 
         self.stats = data['stats']
         self.current_hp = self.stats['hp'] + level
@@ -56,11 +55,6 @@ class Character(pygame.sprite.Sprite):
     def take_damage(self, amount):
         self.current_hp = max(0, self.current_hp - amount)
 
-    def use_potion(self):
-        if self.num_potions > 0:
-            self.current_hp = min(self.max_hp, self.current_hp + 30)
-            self.num_potions -= 1
-
     def draw(self, game, alpha=255):
         sprite = self.image.copy()
         transparency = (255, 255, 255, alpha)
@@ -92,8 +86,16 @@ class Character(pygame.sprite.Sprite):
 
 
 class Hero(Character):
-    pass
+    def __init__(self, name, data, level, x, y):
+        super().__init__(name, data, level, x, y)
 
+        self.num_potions = 3
+        self.MAX_POTIONS = 3
+
+    def use_potion(self):
+        if self.num_potions > 0:
+            self.current_hp = min(self.max_hp, self.current_hp + 30)
+            self.num_potions -= 1
 
 class Enemy(Character):
     pass

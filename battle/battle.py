@@ -97,6 +97,7 @@ def start_battle(hero, enemy, game):
                             if enemy.current_hp <= 0:
                                 # Pausa de 1 segundo para o efeito de ataque
                                 time.sleep(1)
+                                enemy.isDefeated = True
                             game_status = 'enemy turn' if enemy.current_hp > 0 else 'gameover'
                             break
 

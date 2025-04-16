@@ -142,8 +142,19 @@ class Game:
                     # Se existir um extra:
                     if extra:
                         if extra == 'potion':
-                            self.battle_hero.num_potions += 1
-                            display_message_points('Você ganhou uma poção!', self.window)
+                             if self.battle_hero.num_potions < self.battle_hero.MAX_POTIONS:
+                                self.battle_hero.num_potions += 1
+                                display_message_points('Você ganhou uma poção!', self.window)
+                             else:
+                                display_message_points('Você já tem o máximo de poções!', self.window)
+                        elif extra == 'chest':
+                            if self.defeated_bosses['earth_boss']:
+                                self.battle_hero.MAX_POTIONS += 1
+                                display_message_points('Você ganhou espaço para carregar mais uma poção!', self.window)
+                            else:
+                                display_message_points("Está fechado! Tente abrir novamente mais tarde...", self.window)
+
+
 
         current_map = self.map_manager.get_current_map()
         self.player.handle_keys(keys, current_map, self.window)
