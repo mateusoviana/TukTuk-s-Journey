@@ -47,8 +47,8 @@ class Game:
         if (map_width, map_height) != self.window.get_size():
             self.window = pygame.display.set_mode((map_width, map_height))
 
-            self.window.fill((64, 64, 64))
-            current_map.draw(self.window)
+        self.window.fill((64, 64, 64))
+        current_map.draw(self.window)
 
         self.player.update(current_map, self.window)
         self.player.draw(self.window)
